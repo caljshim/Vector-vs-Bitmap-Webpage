@@ -1,0 +1,13 @@
+﻿Hello Professor! (or TA -  not sure who grades these)
+
+
+For the most part, my webpage is pretty simple and self-explanatory. However, I used code from a library to make the images pannable, and because I used a library, I kept running into a “Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, chrome-untrusted, https.” error. 
+
+
+The fix to this was simple, the webpage just needs to be run from a server. If you have any other VS Code extension that starts a live server for the web page, then it should work just fine, but in the case that you don’t, I used “Live Server” by Ritwick Dey. For this extension, all you need to do is press ctrl+shift+P and then type “Live Server: Open With Live Server.”
+
+
+References for my information are found in the “Sources” hyperlink at the bottom of the webpage.
+
+
+I hope the project meets all your expectations Professor/TA, it’s been a pleasure being a part of your class.

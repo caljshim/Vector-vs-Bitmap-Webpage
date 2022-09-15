@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script type="module">
+        import {panzoom} from './panzoom.js'
+        document.addEventListener("DOMContentLoaded", (e) => {
+                panzoom('#bmpImage', {zoom: false, bound: 'none',});
+                panzoom('#vectorImage', {zoom: false, bound:'none'});
+        });
+      </script>
+    <head>
+        <title>Bitmap vs Vector Graphics</title>
+        <link rel="stylesheet" href="finalproject.css">
+    </head>
+    <body>
+        <div style="background-color: rgb(3, 85, 3); width: 100%; height: 100px; margin-bottom: 10px">
+            <p class="text" id="header">
+                Caleb Shim <br>#EssenceOfComputing</br> Professor Ordo&ntilde;ez <br>December 15, 2021</br>
+            </p>
+            <img src="logoWhiteV.gif" height="80px" style="margin-left: 20px; margin-top: 10px">
+        </div>
+        <div style="width: 925px;">
+            <h1 class="text">Bitmap vs Vector Graphics</h1>
+            <h3 class="text">What are bitmap and vector images, and how are they different?</h3>
+        </div>
+        <div id="information" style="width: 925px">
+            <p id="bmpInfo" class="infoText">A bitmap (or raster) graphic is created from rows of colored pixels that together form an image. Raster files support millions of different colors and shades for use in any kind of image. The three most common file formats for rasters are JPEG, GIF, and PNG. Some of the less common ones are TIFF, XBM, BMP, and PCX. Rasters represent the majority of images found online and are much more common than vectors. The image displayed on computer monitors is also a raster, as are the outputs of printers, scanners, and similar devices.</p>
+            <p id="vectInfo" class="infoText">A vector (or an "object oriented") graphic is constructed using mathematical formulas describing shapes, color, and placement. Unlike a bitmap, a vector contains instructions about where to place each of the image's components. Some vector file formats include SVG, EPS, and PDF. Vectors are most often used for creating logos, line art, 3D-like renderings, and animations.</p>
+            <p><div class="infoText" style="font-weight: bold;">Uses</div><div class="infoText">Both image types are useful in their own right, making neither one or the other superior to the other. For example, raster images are much better suited for photographs, brochures, or advertisements because rasters are more detailed at a fixed resolution. In the three examples named before, re-sizing or transforming the resolution isn't usually necessary. Vectors, however, are best suited for things like logos, text, or line-art because they can be scaled to any size without losing quality. Logos, for example, are very likely to be changed to fit multiple sizes by a company.</div></p>
+            <p><div class="infoText" style="font-weight: bold;">Try it Yourself!</div><div class="infoText">Play with the image below, and see for yourself the difference between the two. The image on the left is a raster, and the one on the right is a vector.</div><br>
+        </div>
+        <div id="buttons">
+            <button type="button" id="zoomOut" onclick=zoomOut()>-</button>
+            <a style="display: inline;">Zoom</a>
+            <button type="button" id="zoomIn" onclick=zoomIn()>+</button>
+            <button type="button" id="reset" onclick=reset()>Reset</button>
+        </div>
+        <div id="buttons2">
+            <button type="button" id="shrHeight" onclick=shrHeight()>-</button>
+            <a style="display: inline;">Stretch Height</a>
+            <button type="button" id="strHeight" onclick=strHeight()>+</button>
+        </div>
+        <div id="buttons3">
+            <button type="button" id="strWidth" onclick=shrWidth()>-</button>
+            <a style="display: inline;">Stretch Width</a>
+            <button type="button" id="shrWidth" onclick=strWidth()>+</button>
+        </div>
+        <div class="flex-container" id="flex-container">
+                <div class="flex-child">
+                    <img id="bmpImage" ondragstart = "return false" class="image" src="flowerbmp.png" alt="Flower bitmap example">
+                </div>
+                <div class="flex-child">
+                    <img id="vectorImage" ondragstart = "return false" class="image" src="flowervector.svg" alt="Flower vector example">
+                </div>
+        </div>
+        <div class="information" style="width: 925px">
+            <p class="infoText">After playing around with the images for a little bit, you'll notice how the raster graphic begins to lose quality, while the vector doesn't. However, at the original resolution (although not a drastic difference), the raster graphic is more detailed than the vector.</p>
+        </div>
+        <div style="height: 450px; width:1000px; overflow: hidden">
+            <h2 class="text">Vector and Bitmap Summary</h2>
+            <div class="flex-child2">
+                <div>
+                    <p class="infoText">Bitmap (Raster)</p>
+                    <ul>
+                        <li>Pixel-based</li>
+                        <li>Raster programs best for editing photos and creating continuous tone images with soft color blends</li>
+                        <li>Do not scale up optimally - Image must be created/scanned at the desired usage size or larger</li>
+                        <li>Large dimensions & detailed images equal large file size</li>
+                        <li>It is more difficult to print raster images using a limited amount of spot colors</li>
+                        <li>Some processes cannot use raster formats</li>
+                        <li>Depending on the complexity of the image, conversion to vector may be time consuming</li>
+                        <li>Raster images are the most common image format, including: jpg, gif, png, tif, bmp, psd, eps and pdfs originating from raster programs</li>
+                        <li>Common raster programs: photo editing / paint programs such as Photoshop & Paint Shop, GIMP (free)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex-child2">
+                <div>
+                <p class="infoText">Vectors</p>
+                    <ul>
+                        <li>Shapes based on mathematical calculations</li>
+                        <li>Vector programs best for creating logos, drawings and illustrations, technical drawings. For images that will be applied to physical products.</li>
+                        <li>Can be scaled to any size without losing quality</li>
+                        <li>Resolution-independent: Can be printed at any size/resolution</li>
+                        <li>A large dimension vector graphic maintains a small file size</li>
+                        <li>Number of colors can be easily increased or reduced to adjust printing budget</li>
+                        <li>Vector art can be used for many processes and easily rasterized to be used for all processes</li>
+                        <li>Can be easily converted to raster</li>
+                        <li>It is not the best format for continuous tone images with blends of color or to edit photographs</li>
+                        <li>Common vector graphic file format: ai, cdr, svg, and eps & pdfs originating from vector programs</li>
+                        <li>Common vector programs: drawing programs such as Illustrator, CorelDraw, Inkscape (free)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <a style="position:relative" href="https://docs.google.com/document/d/1T7VrzulI9gwSgJXq0JGXY8SE6a69O_Vh3xRVcvHgOkY/edit">Sources</a>
+        <div style="background-color: rgb(3, 85, 3); width: 100%; height: 50px;"></div>
+    </body>
+    <script src="finalproject.js"></script>
+</html>
